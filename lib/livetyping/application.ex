@@ -15,9 +15,10 @@ defmodule Livetyping.Application do
       # Start the PubSub system
       {Phoenix.PubSub, name: Livetyping.PubSub},
       # Start the Endpoint (http/https)
-      LivetypingWeb.Endpoint
+      LivetypingWeb.Endpoint,
       # Start a worker by calling: Livetyping.Worker.start_link(arg)
       # {Livetyping.Worker, arg}
+      Livetyping.Presence
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html

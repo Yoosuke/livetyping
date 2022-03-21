@@ -1,0 +1,23 @@
+
+<section class="phx-hero">
+  <div class="container"
+    phx-window-focus="page-active"
+    phx-window-blur="page-inactive"
+    phx-window-keyup="typing"
+    phx-value-word={ @word }
+    phx-value-char={ String.at(@word, 0) }
+    phx-value-count={ @count }
+  >
+
+  <%= if @data == "" do%>
+  <button phx-click="start", phx-value-data={ @data }>開始</button>
+  <% end %>
+
+  <p><%= @word %></p>
+  </div>
+</section>
+
+  <%= if @results != %{} do %>
+  <%= @results.key %><br/>
+  <%= @error %>
+  <% end %>

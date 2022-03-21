@@ -5,6 +5,7 @@ defmodule LivetypingWeb.Router do
     plug :accepts, ["html"]
     plug :fetch_session
     plug :fetch_live_flash
+    plug LiveTypingWeb.Plugs.AssignSession
     plug :put_root_layout, {LivetypingWeb.LayoutView, :root}
     plug :protect_from_forgery
     plug :put_secure_browser_headers
@@ -18,6 +19,7 @@ defmodule LivetypingWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :index
+    live "/typeing", TypingLive, :index
   end
 
   # Other scopes may use custom stacks.
